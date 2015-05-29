@@ -30,9 +30,9 @@
      echo 'Error: Could not connect to database.  Please try again later.';
      exit;
   }
-//(isbn, author, title, price)
+
   mysql_select_db('books');
-  $query = "insert into books  values 
+  $query = "insert into books (isbn, author, title, price) values 
             ('".$isbn."', '".$author."', '".$title."', '".$price."')"; 
   $result = mysql_query($query);
   if ($result)
