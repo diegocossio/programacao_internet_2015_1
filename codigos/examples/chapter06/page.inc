@@ -7,9 +7,7 @@ class Page
   var $keywords = 'TLA Consulting, Three Letter Abbreviation, 
                    some of my best friends are search engines';
   var $buttons = array( 'Home'     => 'home.php', 
-                        'Contact'  => 'contact.php', 
                         'Services' => 'services.php', 
-                        'Site Map' => 'map.php'
                       );
 
   // class Page's operations
@@ -52,6 +50,11 @@ class Page
   {
     echo '<title> $this->title </title>';
   }
+
+  // function DisplayTitle($var)
+  // {
+  //   echo '<title> $var </title>';
+  // }
 
   function DisplayKeywords()
   {
@@ -110,7 +113,7 @@ class Page
 
   function IsURLCurrentPage($url)
   {
-    if(strpos( $GLOBALS['SCRIPT_NAME'], $url )==false)
+    if(strpos( $_SERVER['SCRIPT_NAME'], $url )==false)
     {
       return false;
     }
